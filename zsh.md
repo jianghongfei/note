@@ -38,3 +38,42 @@ If the command substitution is in double quotes, then no splitting is performed.
 Note that the proper way to iterate over an array in general is `for f in $files[@]`, as `$files` strips off empty elements (here, it doesn't matter because the elements won't be empty).
 
 `print $f` interprets `$f` as a switch if it begins with a `-` and expands backslashes in `$f`. Use `print -r -- $f`, or `print -rn -- $f` if you don't want to add a newline after the string.
+
+### Iterating over keys (or k/v pairs)
+	typeset -A assoc_array
+	assoc_array=(k1 v1 k2 v2 k3 v3)
+
+	for k in "${(@k)assoc_array}"; do
+		echo "$k -> $assoc_array[$k]"
+	done
+Output is:
+
+	k1 -> v1
+	k2 -> v2
+	k3 -> v3
+
+### Iterating over range
+	for i in {1..4}; do
+		echo --$i--
+	done
+
+### Argument Handling
+[Reference](http://zshwiki.org/home/scripting/args)
+
+### Assign command output to a variable
+	string=$(find . -name "*normal_24dp.png")
+	# or if the file name donesn't contain space
+	array=($(find . -name "*normal_24dp.png"))
+
+### To rename files in bulk
+	files=("${(@f)$(find . -name "*normal_24dp.png")}")
+	for $file in $files[@]; do
+		mv $file ${file%normal_24dp.png}off_24dp.png
+	done
+
+### Array length
+	temp=(1 2 3)
+	echo $#temp           // output 3
+
+### Array operations
+[Reference](http://zshwiki.org/home/scripting/array)
