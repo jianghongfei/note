@@ -8,6 +8,7 @@
 - ncurses
 - libiconv-devel
 - openssl-devel
+- openssh
 - libcurl-devel
 - curl
 - curl-dev
