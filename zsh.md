@@ -77,3 +77,7 @@ Output is:
 
 ### Array operations
 [Reference](http://zshwiki.org/home/scripting/array)
+
+### Repeat char
+	% echo ${(r:40::-:)A}
+	---------------------------------------

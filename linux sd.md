@@ -10,3 +10,6 @@
 Edit /etc/fstab, and append this line:
 
 	/dev/mmcblk1 /mnt/sd ext4 defaults 0 0
+	
+### To list all block devices
+	lsblk

@@ -25,13 +25,19 @@
 - Hinting : Slight
 - Antialiasing: Rgba
 
+#### Adding SSH Keys to Authorized_Keys
+
+	ssh-copy-id user@host
+	
+[Reference](http://askubuntu.com/questions/46424/adding-ssh-keys-to-authorized-keys)
+
 #### Search string in subfolders
 	grep -r 'words to search' .
 
 ##### Replace string in subfolders
 	find . -type f -exec sed -i 's/googleapis.com/useso.com/g' {} +
 	find . -type f -print0 | xargs -0 sed -i 's/googleapis.com/useso.com/g'
-	grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'
+	grep -rl --include='*.xml' matchstring somedir/ | xargs sed -i 's/string1/string2/g'
 
 #### Change console resolution
 
@@ -89,15 +95,17 @@
 > `gpasswd -d user group`
 
 ### How to add new user
-> `useradd user`
+> `useradd -m user`
 
 ### How to allow (.) in username
 http://askubuntu.com/questions/405638/what-are-the-disadvantages-of-having-a-dot-in-a-user-name
 sudo vim /etc/adduser.conf
 Locate this line
-#NAME_REGEX="^[a-z][-a-z0-9]*$"
+
+	#NAME_REGEX="^[a-z][-a-z0-9]*$"
 replace with
-NAME_REGEX='^[a-z]([-a-z0-9]|\.)*$'
+
+	NAME_REGEX='^[a-z]([-a-z0-9]|\.)*$'
 
 ### How to add new group
 > `addgroup group`
