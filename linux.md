@@ -95,7 +95,16 @@
 > `gpasswd -d user group`
 
 ### How to add new user
-> `useradd -m user`
+```
+useradd -m user
+useradd -m -g sudo -s `which zsh` jiang.hongfei
+```
+
+### How to disable sudo password
+```
+# add to the end of /etc/sudoer
+username ALL=(ALL) NOPASSWD: ALL
+```
 
 ### How to allow (.) in username
 http://askubuntu.com/questions/405638/what-are-the-disadvantages-of-having-a-dot-in-a-user-name

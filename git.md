@@ -81,6 +81,8 @@ so rollback to last commit:
 	
 ### viewing the commit history
 	git log
+	git log master
+	git reflog show HEAD
 	
 ### changing your last commit
 	git commit --amend
