@@ -32,7 +32,7 @@
 [Reference](http://askubuntu.com/questions/46424/adding-ssh-keys-to-authorized-keys)
 
 #### Search string in subfolders
-	grep -r 'words to search' .
+	grep -nr 'words to search' .
 
 ##### Replace string in subfolders
 	find . -type f -exec sed -i 's/googleapis.com/useso.com/g' {} +

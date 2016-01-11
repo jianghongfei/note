@@ -16,6 +16,33 @@ config username & email & push globally
 
 these setting will be saved into ~/.gitconfig
 
+## Create a new branch
+    git checkout -b branch_name
+
+## Gi merge conflict
+    git checkout --ours/--theirs file
+    git reset file
+
+## Go back to an old commit
+    git reset --hard commit-id
+
+## Merge from another commit without commit
+    git merge hash_code --no-commit --no-ff
+    
+## Git show detail of a commit
+    git show commit-id
+
+## Git show files of a commit
+	git show --pretty="format:" --name-only hash
+
+## Git show log of a file
+    git log --follow file
+    or
+    gitk file
+
+## Git show log of amended commits
+    git reflog
+
 ## editor
 	git config --global core.editor vim
 
