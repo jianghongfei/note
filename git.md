@@ -19,6 +19,12 @@ these setting will be saved into ~/.gitconfig
 ## Create a new branch
     git checkout -b branch_name
 
+## Create a new branch from commit
+    git branch branch_name hash
+
+## Push local branch to remote
+    git push -u origin branch_name
+
 ## Gi merge conflict
     git checkout --ours/--theirs file
     git reset file
