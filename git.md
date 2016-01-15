@@ -25,6 +25,17 @@ these setting will be saved into ~/.gitconfig
 ## Push local branch to remote
     git push -u origin branch_name
 
+## Git show content of a file in another branch
+    git show branch:path
+    git show branch:path > out
+
+## Git checkout a file in another branch
+    git checkout branch -- path
+    git checkout hash -- path
+
+## Git diff file between two branches
+    git diff brach_a:path branch_b:path
+    
 ## Gi merge conflict
     git checkout --ours/--theirs file
     git reset file
