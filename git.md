@@ -25,9 +25,15 @@ these setting will be saved into ~/.gitconfig
 ## Push local branch to remote
     git push -u origin branch_name
 
+## Delete a branch both locally and remotely
+	git push origin --delete branch_name
+
 ## Git show content of a file in another branch
     git show branch:path
     git show branch:path > out
+
+## Git show latest commit info
+    git log -1 --online
 
 ## Git checkout a file in another branch
     git checkout branch -- path
@@ -35,16 +41,25 @@ these setting will be saved into ~/.gitconfig
 
 ## Git diff file between two branches
     git diff brach_a:path branch_b:path
+
+## Git show changes in a commit
+    git diff hash^ hash
     
-## Gi merge conflict
+## Git undo a merge
+    git reset --hard ORIG_HEAD
+
+## Git merge conflict
     git checkout --ours/--theirs file
     git reset file
+
+## Git ignore traced files
+	git rm --cached <file>
 
 ## Go back to an old commit
     git reset --hard commit-id
 
 ## Merge from another commit without commit
-    git merge hash_code --no-commit --no-ff
+    git merge hash_code --no-commit --no-ff    
     
 ## Git show detail of a commit
     git show commit-id
@@ -132,5 +147,6 @@ so rollback to last commit:
 	git commit --amend
 
 ## Fixing whitespace when applying patches with git
-git config --global core.whitespace trailing-space,space-before-tab
-git config --global apply.whitespace fix
+
+    git config --global core.whitespace trailing-space,space-before-tab
+    git config --global apply.whitespace fix

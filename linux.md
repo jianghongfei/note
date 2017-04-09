@@ -212,3 +212,39 @@ Create a usergroup and add ftpuser to it
     usermod -Gftpusers ftpuser
 Now start the vsftpd
     service vsftpd start
+
+## How to change username
+	// Run the following commands in another administrator account
+	id old
+	usermod -l new old
+	groupmod -n new old
+	id new
+	// change home in /etc/passwd
+
+## PPA
+
+```
+# git
+sudo add-apt-repository ppa:git-core/ppa
+# node js
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get update
+sudo apt-get install git
+
+# [java](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get)s
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+# then java 7
+sudo apt-get install oracle-java7-installer
+# or java 8
+sudo apt-get install oracle-java8-installer
+
+# [chrome](http://www.ubuntuupdates.org/ppa/google_chrome)
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update 
+sudo apt-get install google-chrome-stable
+
+# [zsh](http://www.linuxfromscratch.org/blfs/view/svn/postlfs/zsh.html)
+sudo apt-get install libncurses-dev
+```
