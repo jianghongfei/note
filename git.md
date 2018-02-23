@@ -150,3 +150,7 @@ so rollback to last commit:
 
     git config --global core.whitespace trailing-space,space-before-tab
     git config --global apply.whitespace fix
+
+## reset author
+
+	git commit --amend --reset-author
